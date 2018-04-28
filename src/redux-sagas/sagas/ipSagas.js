@@ -1,10 +1,10 @@
-import {put} from "redux-saga/effects"
+import {put, call} from "redux-saga/effects"
 
 import {loadDataSuccess} from "../actions/actions"
 
 function* getIP(axios) {
-    const data = yield axios.get('http://httpbin.org/ip')
-    yield put(loadDataSuccess(data.data))
+    const data = yield call(axios.get, 'https://httpbin.org/ip')
+    yield put(loadDataSuccess(data.data.origin))
 }
 
 export default getIP

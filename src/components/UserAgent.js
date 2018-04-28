@@ -7,7 +7,7 @@ import {loadDataUARequest} from '../redux-sagas/actions/actions'
 const UserAgent = (props) => {
     return (
         <p>
-            User agent: {props.data['user-agent']}
+            User agent: {props.data}
             { !props.isFetching && <button onClick={() => props.loadData()}>GET UA</button> }
             {props.isFetching && 'Loading...'}
             {props.error && 'Erro: Não foi possível executar a requisição'}

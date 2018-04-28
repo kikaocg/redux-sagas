@@ -5,7 +5,7 @@ import {connect} from 'react-redux'
 //functional stateless component
 const Info = (props) => {
     return (
-        <p> Seu IP: {props.data.origin}
+        <p> Seu IP: {props.data}
             {!props.isFetching && <button onClick={() => props.loadData()}>GET IP</button>}
             {props.isFetching && 'Loading...'}
         </p>
